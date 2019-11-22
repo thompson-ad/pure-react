@@ -18,4 +18,4 @@ console.log(ourSpice);
 
 // using.findIndex finds the index
 
-// for find if returns false then you get undefined for findIndex you get -1
+// for find if returns false then you get undefined for findIndex you get -11
