@@ -35,9 +35,7 @@ console.log(newUser);
 // So to update the user object immutably we need to make a copy of the user object
 
 function setName(user, newName) {
-  const copy = { ...user }; //create a new wrapper and copt the propeties in
-  copy.firstName = newName;
-  return copy;
+  return { ...user, firstName: newName }; //create a new wrapper and copt the propeties in
 }
 
 console.log(user);
@@ -45,3 +43,12 @@ const newUser = setName(user, "someone else");
 console.log(newUser);
 
 console.log(user === newUser);
+
+// note that the array on post will not be a COPY it will actually be a reference to the original
+
+console.log(user.posts === newUser.posts); //true
+
+// NESTED UPDATE
+function setName(user, newName) {
+  return { ...user, firstName: newName, posts: [...user.posts, "d"] }; //explode posts in place
+}
